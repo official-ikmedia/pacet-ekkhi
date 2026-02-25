@@ -47,7 +47,7 @@ function handleFormSubmit(event) {
 async function fetchData() {
    try {
       const response = await fetch(
-         'https://script.google.com/macros/s/AKfycbzHXOuzpe1djkUL9YqbMmSbrvjpq3IsqCXJL0p3ESezxNHRYtMAhvnZjOXqXGKtQOJm/exec'
+         'https://script.google.com/macros/s/AKfycbxNOw8Odh-YG3DuUfes_zYuurrqPlA_X4UO8YYO6mS6Ox5W2KcQEk3b92_keLzfqXys/exec'
       );
       const data = await response.json();
 
