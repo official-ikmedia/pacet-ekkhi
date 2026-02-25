@@ -6,7 +6,7 @@ function handleFormSubmit(event) {
       text: "",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#fef8cd',
+      confirmButtonColor: '#ff6a00',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Ya, kirim!'
    }).then((result) => {
@@ -47,7 +47,7 @@ function handleFormSubmit(event) {
 async function fetchData() {
    try {
       const response = await fetch(
-         'https://script.google.com/macros/s/AKfycbz9hrqZOVqiqsYW9-viaqcy2c8stv2X-dK7o1asRS40CmBQGiUCO0TBOjNrjN7AUCkTyA/exec'
+         'https://script.google.com/macros/s/AKfycbzHXOuzpe1djkUL9YqbMmSbrvjpq3IsqCXJL0p3ESezxNHRYtMAhvnZjOXqXGKtQOJm/exec'
       );
       const data = await response.json();
 
