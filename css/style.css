@@ -110,17 +110,9 @@ body {
   padding-bottom: 5rem;
 }
 
-.home h2,
-.home2 h2,
-.story h2,
-.amplop-digital h2,
 .turutmengundang h2 {
-  font-family: 'Charmonman', Arial, Helvetica, sans-serif;
+  font-family: 'Neonderthaw', Arial, Helvetica, sans-serif;
   font-size: 4rem;
-  text-decoration: underline;
-  text-underline-offset: 10px;
-  text-decoration-style: dotted;
-  text-decoration-thickness: from-font;
 }
 
 .basmalah {
@@ -168,7 +160,7 @@ body {
   margin-top: 20px;
 }
 
-.home2 .couple h3, .info h3, .rsvp h3 {
+.home2 .couple h3, .info h3, .rsvp h3, .amplop-digital h3, .turutmengundang h3 {
   font-family: 'Charmonman';
   font-size: 2.4rem;
   color: var(--kuning);
@@ -352,18 +344,23 @@ footer li {
   margin-bottom: 1rem;
 }
 
-.btn-clipboard {
-    position: absolute;
-    top: .75em;
-    right: .5em;
-    z-index: 10;
-    display: block;
-    padding: .5em .75em .625em;
-    line-height: 1;
-    color: var(--bs-body-color);
-    background-color: var(--bs-tertiary-bg);
-    border: 0;
-    border-radius: .25rem;
+.copy-wrapper {
+    background-color: #fef8cd;
+    border: 1px solid #bfdfffa8 !important;
+}
+
+.img-top-left, .img-top-right {
+position: absolute;
+width: 120px;
+margin-top: -4rem;
+}
+
+.img-top-left {
+  left: 0;
+}
+
+.img-top-right {
+right: 0;
 }
 
 /* Media Query */
@@ -581,15 +578,6 @@ footer li {
 
   .home2 {
     padding-bottom: 10rem;
-  }
-
-  .home h2,
-  .home2 h2,
-  .info h2,
-  .story h2,
-  .amplop-digital h2 {
-    font-size: 2.2rem;
-    text-decoration: none;
   }
 
   .home,
