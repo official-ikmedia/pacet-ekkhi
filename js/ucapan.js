@@ -92,7 +92,26 @@
 // setInterval(checkUpdate, 30000);
 
 
-const API_URL = 'https://script.google.com/macros/s/AKfycbyt5gJW21_ZuTBfOSrZn3J9KpzSWUz0KvE6ph9r4y9jBF1Ppgzbp2LFhR-enQkFwZbm/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycby7HfGzsBwHktnqJhr_2MON-pEfLB2-3_9F8jBZ492poA7REm5RMtOnjuckgSzvoziJ/exec';
+
+function formatTanggalIndo(dateString) {
+  const date = new Date(dateString);
+
+  if (isNaN(date.getTime())) return '';
+
+  const bulan = [
+    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+  ];
+
+  const jam = date.getHours().toString().padStart(2, '0');
+  const menit = date.getMinutes().toString().padStart(2, '0');
+  const hari = date.getDate();
+  const namaBulan = bulan[date.getMonth()];
+  const tahun = date.getFullYear();
+
+  return `${jam}:${menit} - ${hari} ${namaBulan} ${tahun}`;
+}
 
 const COMMENTS_PER_LOAD = 5;
 
@@ -166,8 +185,8 @@ function renderComments() {
     const div = document.createElement('div');
     div.className = 'mb-4 bg-gradient p-3 rounded border border-light text-white';
     div.innerHTML = `
-      <div class="border-bottom fw-bold">${item.nama}</div>
-      <div class="fst-italic mt-2">${item.doa}</div>
+      <div class="namatamu border-bottom fw-bold pb-2">${item.nama}<span class="jam-komentar">${formatTanggalIndo(item.timestamp)}</span></div>
+  <div class="isidoa fst-italic mt-2">${item.doa}</div>
     `;
     container.appendChild(div);
   });
@@ -203,3 +222,9 @@ async function checkUpdate() {
 
 document.addEventListener('DOMContentLoaded', checkUpdate);
 setInterval(checkUpdate, 30000);
+
+setInterval(() => {
+  document.querySelectorAll('[data-time]').forEach(el => {
+    el.textContent = timeAgo(el.dataset.time);
+  });
+}, 60000);
