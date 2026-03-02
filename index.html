@@ -601,7 +601,6 @@
       disableScroll();
    </script>
 
-
    <script>
       const params = new URLSearchParams(window.location.search);
 
@@ -635,23 +634,6 @@
       }
    </script>
 
-
-   <!-- <script>
-      const params = new URLSearchParams(window.location.search);
-      const nama = decodeURIComponent(params.get('n') || '');
-      const pronoun = decodeURIComponent(params.get('p') || 'Bapak/Ibu/Saudara/i ~ ');
-
-      const span = document.querySelector('.hero h5 span');
-      if (span) {
-         span.textContent = nama ? `${pronoun} ${nama}` : pronoun;
-      }
-
-      const namaInput = document.querySelector('#nama');
-      if (namaInput && nama) {
-         namaInput.value = nama;
-      }
-   </script> -->
-
    <script type="text/javascript">
       // Matikan Klik Kanan
       document.addEventListener('contextmenu', event => event.preventDefault());
@@ -664,6 +646,27 @@
             return false;
          }
       };
+   </script>
+
+   <script>
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('t');
+
+      if (token) {
+         try {
+            const decoded = JSON.parse(atob(token));
+
+            document.querySelector('.sapaan').textContent = decoded.sapaan;
+            document.querySelector('.nama-tamu').textContent = ' ' + decoded.nama;
+
+            const namaInput = document.querySelector('#nama');
+            if (namaInput) namaInput.value = decoded.nama;
+
+            fetch('https://script.google.com/macros/s/AKfycbzLYYAx77RXEHws_s8WMuXrEj-9MitW7j0ox3dj-t0Vxw7Aj7oOxLFb3r72sVU_-N3uOg/exec' + decoded.id);
+         } catch (err) {
+            console.error('Token tidak valid');
+         }
+      }
    </script>
 
 </body>
