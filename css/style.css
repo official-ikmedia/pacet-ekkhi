@@ -55,7 +55,7 @@ body {
   color: black;
 }
 
-.nama-tamu {
+.nama-tamu, .sapaan {
   font-weight: 700;
   font-size: larger;
   background: linear-gradient(45deg, #d4af37, #f9e076, #c9a227);
@@ -326,12 +326,6 @@ footer li {
   font-size:13px;
   font-style: italic;
   margin-top: 5px;
-}
-
-.namatamu{
-  font-family: 'Charmonman', Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: #fef8cd;
 }
 
 .isidoa {
