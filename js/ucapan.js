@@ -89,9 +89,9 @@ function renderComments() {
 
   visible.forEach(item => {
     const div = document.createElement('div');
-    div.className = 'mb-4 bg-gradient p-3 rounded border border-light text-white';
+    div.className = 'mb-4 bg-gradient p-3 rounded';
     div.innerHTML = `
-      <div class="namatamu border-bottom fw-bold pb-2">${item.nama}<span class="jam-komentar">${formatTanggalIndo(item.timestamp)}</span></div>
+      <div class="namatamu border-bottom border-opacity-25 fw-bold pb-2">${item.nama}<span class="jam-komentar">${formatTanggalIndo(item.timestamp)}</span></div>
   <div class="isidoa fst-italic mt-2">${item.doa}</div>
     `;
     container.appendChild(div);
