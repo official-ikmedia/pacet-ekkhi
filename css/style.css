@@ -52,7 +52,7 @@ body {
   color: var(--bg);
 }
 .label-undangan {
-  padding: 35px 35px 25px;
+  padding: 35px 40px 28px;
 }
 .mynavbar {
   background-color: rgba(87, 0, 0, 0.274) !important;
@@ -510,5 +510,11 @@ footer li {
   }
   .turutmengundang h2 {
     font-size: 3.5rem;
+  }
+  .nama-tamu {
+    font-size: 1.2rem;
+  }
+  .label-undangan {
+    padding: 25px 30px 18px;
   }
 }
