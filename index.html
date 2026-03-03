@@ -43,7 +43,7 @@
          <h1 data-aos="zoom-in" data-aos-duration="1300">Pacet & Ekkhi</h1>
          <p data-aos="fade" data-aos-delay="100" data-aos-duration="1500">Akan melangsungkan pernikahan dalam:</p>
          <div class="simply-countdown mb-4" data-aos="fade" data-aos-delay="150" data-aos-duration="1500"></div>
-         <h5 class="mt-4" data-aos="fade" data-aos-delay="100" data-aos-duration="1500">Kepada Yth,</h5>
+         <h5 class="my-4" data-aos="fade" data-aos-delay="100" data-aos-duration="1500">Kepada Yth,</h5>
          <h5 data-aos="fade" data-aos-delay="100" data-aos-duration="1500">
             <span class="sapaan">Bapak</span>
             <span class="nama-tamu"></span>
@@ -499,7 +499,16 @@
 
    <script src="js/musik.js" defer></script>
 
-   <script src="js/namatamuotomatis.js" defer></script>
+   <script>
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("t");
+
+      if (id) {
+         fetch("https://script.google.com/macros/s/AKfycbzLYYAx77RXEHws_s8WMuXrEj-9MitW7j0ox3dj-t0Vxw7Aj7oOxLFb3r72sVU_-N3uOg/exec?t=" + id);
+      }
+   </script>
+
+   <!-- <script src="js/namatamuotomatis.js" defer></script> -->
 
    <!-- <script type="text/javascript">
       // Matikan Klik Kanan
